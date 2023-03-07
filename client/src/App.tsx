@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React from 'react';
 import { ForecastsList, Today } from './components';
 import { TData } from './types';
@@ -16,13 +17,9 @@ function App() {
   }, []);
 
   const clickHandler = async () => {
-    const url = `/weather/${lat},${lon}`;
-    const resp = await fetch(url);
-    const json = await resp.json();
-    setData(json);
+    const resp = await axios.get(`/weather/${lat},${lon}`);
+    setData(resp.data);
   };
-
-  console.log('DATA', data);
 
   return (
     <div className="app">

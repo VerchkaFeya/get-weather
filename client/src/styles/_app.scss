@@ -37,11 +37,11 @@
 .button {
   padding: 8px 13px;
   border-radius: 5px;
-  background-color: #a0d7e9;
+  background-color: #eef4f6;
   font-weight: 600;
   transition: 0.3s;
 
   &:hover {
-    background-color: darken($color: #a0d7e9, $amount: 10);
+    background-color: darken($color: #eef4f6, $amount: 10);
   }
 }

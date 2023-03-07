@@ -27,13 +27,13 @@ const Today = ({ today, forecast, yesterdayTemp }: TTodayProps) => {
         </div>
         <div className="today__temp-range">
           <div>
-            <div className="today__temp-min">{` ${forecast.parts.night.temp_min}`}</div>
+            <div className="today__temp-min">{`${forecast.parts.night.temp_min}°`}</div>
             <div>
               Минимальная температура <br /> за день
             </div>
           </div>
           <div>
-            <div className="today__temp-max">{forecast.parts.day.temp_max}</div>
+            <div className="today__temp-max">{`${forecast.parts.day.temp_max}°`}</div>
             <div>
               Максимальная температура <br /> за день
             </div>
