@@ -7,6 +7,7 @@ const app = express();
 
 const PORT = 3001;
 const apiKey = process.env.API_KEY;
+// api-key: 8e016b2a-76b9-4c7a-bb18-5715b635e6a9
 
 app.listen(PORT, () => {
   console.log(`App listening on port ${PORT}`);
