@@ -1,9 +1,10 @@
 import React from 'react';
+import { TFact, TForecast } from '../types';
 import { getWindDir } from '../utils';
 
 type TTodayProps = {
-  today: any;
-  forecast: any;
+  today: TFact;
+  forecast: TForecast;
   yesterdayTemp: number;
 };
 

@@ -1,8 +1,9 @@
 import React from 'react';
+import { TForecast } from '../types';
 import { getDate, getWindDir } from '../utils';
 
 type TForecastDay = {
-  day: any;
+  day: TForecast;
 };
 
 const ForecastDay = ({ day }: TForecastDay) => {

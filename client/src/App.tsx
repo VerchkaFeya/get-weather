@@ -1,9 +1,10 @@
 import React from 'react';
 import { ForecastsList, Today } from './components';
+import { TData } from './types';
 import { getDate } from './utils';
 
 function App() {
-  const [data, setData] = React.useState<any>(null);
+  const [data, setData] = React.useState<TData | null>(null);
   const [lat, setLat] = React.useState<number>();
   const [lon, setLon] = React.useState<number>();
 
@@ -18,7 +19,6 @@ function App() {
     const url = `/weather/${lat},${lon}`;
     const resp = await fetch(url);
     const json = await resp.json();
-    console.log(json);
     setData(json);
   };
 
@@ -27,11 +27,14 @@ function App() {
   return (
     <div className="app">
       <div className="app__container">
-        <div className="app__button">
-          <button className="button" onClick={clickHandler}>
-            ПОЛУЧИТЬ ПРОГНОЗ ПОГОДЫ
-          </button>
-        </div>
+        {!data && (
+          <div className="app__button">
+            <button className="button" onClick={clickHandler}>
+              ПОЛУЧИТЬ ПРОГНОЗ ПОГОДЫ
+            </button>
+          </div>
+        )}
+
         {data && (
           <>
             <div className="app__info">

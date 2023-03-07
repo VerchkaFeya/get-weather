@@ -14,8 +14,6 @@ app.get('/weather/:latlon', async (req, res) => {
   const lat = latlon[0];
   const lon = latlon[1];
 
-  console.log(lat, lon);
-
   const config = {
     method: 'GET',
     url: `https://api.weather.yandex.ru/v2/forecast?lat=${lat}&lon=${lon}&limit=6`,
