@@ -1,24 +1,43 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { ForecastsList, TodayWeather } from './components';
 
 function App() {
+  const [data, setData] = React.useState<any>(null);
+  const [lat, setLat] = React.useState<number>();
+  const [lon, setLon] = React.useState<number>();
+
+  React.useEffect(() => {
+    navigator.geolocation.getCurrentPosition((position) => {
+      setLat(position.coords.latitude);
+      setLon(position.coords.longitude);
+    });
+  }, []);
+
+  const clickHandler = () => {
+    alert('do something');
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <div className="app__container">
+        <div className="app__button">
+          <button className="button" onClick={clickHandler}>
+            ПОЛУЧИТЬ ПРОГНОЗ ПОГОДЫ
+          </button>
+        </div>
+        <div className="app__info">
+          <h1>city</h1>
+          <h2>now date</h2>
+          <h4>Location is: {`lat: ${lat} , lon: ${lon}`}</h4>
+          <div className="app__time">{`Сейчас: ${'ВРЕМЯ'}. Вчера в это время ${'ВРЕМЯ'}`}</div>
+        </div>
+        <div className="app__today">
+          <TodayWeather />
+        </div>
+        <div className="app__forecasts">
+          <ForecastsList />
+        </div>
+      </div>
     </div>
   );
 }
