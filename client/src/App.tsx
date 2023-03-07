@@ -13,8 +13,11 @@ function App() {
     });
   }, []);
 
-  const clickHandler = () => {
-    alert('do something');
+  const clickHandler = async () => {
+    const url = `/weather/${lat},${lon}`;
+    const resp = await fetch(url);
+    const json = await resp.json();
+    console.log(json);
   };
 
   return (

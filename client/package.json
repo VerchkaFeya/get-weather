@@ -43,5 +43,6 @@
   },
   "devDependencies": {
     "scss": "^0.2.4"
-  }
+  },
+  "proxy": "http://localhost:3001"
 }
