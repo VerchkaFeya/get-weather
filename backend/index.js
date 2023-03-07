@@ -18,7 +18,7 @@ app.get('/weather/:latlon', async (req, res) => {
 
   const config = {
     method: 'GET',
-    url: `https://api.weather.yandex.ru/v2/forecast?lat=${lat}&lon=${lon}`,
+    url: `https://api.weather.yandex.ru/v2/forecast?lat=${lat}&lon=${lon}&limit=6`,
     headers: {
       'X-Yandex-API-Key': '8e016b2a-76b9-4c7a-bb18-5715b635e6a9',
     },

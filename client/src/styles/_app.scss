@@ -9,12 +9,20 @@
   &__container {
     width: 100%;
     max-width: 900px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
   }
 
   &__button {
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+
+  &__coord {
+    font-size: 0.8rem;
+    color: gray;
   }
 
   &__today {

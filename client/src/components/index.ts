@@ -1,5 +1,5 @@
 import { ForecastDay } from './ForecastDay';
-import { TodayWeather } from './TodayWeather';
+import { Today } from './Today';
 import { ForecastsList } from './ForecastsList';
 
-export { ForecastDay, TodayWeather, ForecastsList };
+export { ForecastDay, Today, ForecastsList };

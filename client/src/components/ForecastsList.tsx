@@ -5,13 +5,13 @@ type TForecastsList = {
   forecasts: any;
 };
 
-const ForecastsList = () => {
+const ForecastsList = ({ forecasts }: TForecastsList) => {
   const arr = [...new Array(5)];
 
   return (
     <div className="forecasts-list">
-      {arr.map((item, index) => {
-        return <ForecastDay key={index} />;
+      {forecasts.map((item: any, index: number) => {
+        if (index !== 0) return <ForecastDay day={item} key={index} />;
       })}
     </div>
   );
