@@ -14,8 +14,8 @@ app.listen(PORT, () => {
 
 app.get('/weather/:latlon', async (req, res) => {
   const latlon = req.params.latlon.split(',');
-  const lat = latlon[0];
-  const lon = latlon[1];
+  const lat: string = latlon[0];
+  const lon: string = latlon[1];
 
   const config = {
     method: 'GET',
